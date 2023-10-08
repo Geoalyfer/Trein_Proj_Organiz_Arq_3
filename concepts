@@ -1,0 +1,24 @@
+Mapear a extensão de cada tipo de arquivo.
+
+Na lista inicial os dados são uma string
+
+lista_arquivos
+['New Microsoft PowerPoint Presentation.pptx',
+ 'New Microsoft Publisher Document.xlsx',
+ 'New Microsoft Word Document - Copy.docx',
+ 'New Microsoft Word Document.docx',
+ 'New Text Document.txt',
+ 'Organizador.ipynb']
+
+A lista de arquivos recebeum um split para identificar a parte final do nome de arquivo que é separada pelo ponto.
+Para evitar separar espaços vazios, utiliza-se obter o indice -1 de cada arquivo da lista.
+'New Microsoft PowerPoint Presentation.pptx'.split(".")[-1]
+
+Para evitar a listagem de extensões repetidas utiliza-se a função set que vai gerar um conjunto de dados sem repetição.
+  
+lista_tipos = set( [tipo.split(".")[-1] for tipo in lista_arquivos ])
+
+lista_tipos
+
+{'docx', 'ipynb', 'pptx', 'txt', 'xlsx'}
+
